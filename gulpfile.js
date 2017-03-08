@@ -1,5 +1,6 @@
 // IMPORT MODULES
 var fs = require( 'fs' );
+var del = require( 'del' );
 var gulp = require( 'gulp' );
 
 
@@ -15,4 +16,14 @@ gulp.task( 'write-files', function() {
 	}
 
 	console.log( 'DONE WRITING FILES!' );
+} );
+
+gulp.task( 'delete-files', function() {
+	del( [ __dirname + '/src/*' ] )
+		.then(
+			function( paths ) {
+				console.log( 'LOGGING OUT `paths`' );
+				console.log( paths );
+			}
+		);
 } );
