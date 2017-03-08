@@ -5,7 +5,7 @@ var gulp = require( 'gulp' );
 
 
 // DEFINE TASKS
-gulp.task( 'default', function() {
+gulp.task( 'default', [ 'write-files', 'delete-files' ], function() {
 	console.log( 'INSIDE GULP TASK: `default`' );
 } );
 
